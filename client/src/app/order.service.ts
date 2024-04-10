@@ -10,6 +10,6 @@ export class OrderService {
   constructor(private http:HttpClient) { }
 
   getOrders(): Observable<any[]> {
-    return this.http.get<any[]>('https://ecommerce-store-smoky-zeta.vercel.app/orders');
+    return this.http.get<any[]>('https://ecommerce-gold-three.vercel.app/orders');
   }
 }

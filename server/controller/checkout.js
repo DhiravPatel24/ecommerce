@@ -31,8 +31,8 @@ async function getProductById(productId) {
             }],
             mode: 'payment',
             
-            success_url: 'https://ecommerce-store-smoky-zeta.vercel.app/success.html?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url: 'https://ecommerce-store-smoky-zeta.vercel.app/cancel.html',
+            success_url: 'https://ecommerce-gold-three.vercel.app/success.html?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url: 'https://ecommerce-gold-three.vercel.app/cancel.html',
             metadata: {
               productId: productId ,
               username:username,
@@ -104,8 +104,8 @@ async function getProductById(productId) {
                 quantity: (item.quantity),
             })),
             mode: 'payment',
-            success_url: 'https://ecommerce-store-smoky-zeta.vercel.app/successcart.html?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url: 'https://ecommerce-store-smoky-zeta.vercel.app/cancel.html',
+            success_url: 'https://ecommerce-gold-three.vercel.app/successcart.html?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url: 'https://ecommerce-gold-three.vercel.app/cancel.html',
             metadata: {
               // productId: productId ,
             totalprice:totalprice,
