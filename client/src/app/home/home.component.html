@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div *ngIf="!isProductRoute()" >
+    <div class="main">
+      <div class="des">
+        <h1>SUMMER</h1>
+        <h1 style="font-size: 70px; letter-spacing: 5px; font-weight: 900;" class="gradient_text">SALE</h1>
+        <h1>TODAY'S ONLY</h1>
+        <p>Enjoy scorching discounts on a wide range of products, from stylish summer apparel to refreshing outdoor gear.</p>
+        <button routerLink="/products">SHOP NOW</button>
+      </div>
+      <div class="image">
+        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/online-shopping-delivery-8191228-6594626.png" alt="">
+      </div>
+    </div>
+</div>
+
+<div *ngIf="!isProductRoute()" class="tag">
+  <h1 style="margin-top: 30px; margin-bottom: 50px;"  class="gradient_text">OUR COLLECTION</h1>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 ca" style="margin-bottom: 15px;" *ngFor="let product of products" >
+        <div class="card-container">
+          <div class="card mb-4" style="border: none; border-radius: 4px; box-shadow: 0px 0px 10px 0px rgb(152, 152, 152);">
+            <img class="card-img-top" (click)="redirectToProductPage(product._id)" [src]="product.image" alt="{{ product.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <!-- <p class="card-text">{{ product.description }}</p> -->
+              <p class="card-text" style="color: green;">Price: {{ product.price }}</p>
+             
+              <button class="btn btn-primary btn-cart" style="background-color: white; border: none;" (click)="addToCart(product)">
+                <i class="fas fa-shopping-cart" style="color: rgb(255, 0, 93);"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-footer></app-footer>
+  
+<!-- <app-product *ngIf="selectedProduct" [product]="selectedProduct"></app-product> -->

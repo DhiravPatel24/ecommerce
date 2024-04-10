@@ -1,0 +1,49 @@
+.footer {
+    background-color: black;
+    padding: 20px 0; 
+    font-size: 14px; 
+    color: white;
+  }
+  
+  .container {
+    max-width: 1200px; 
+    margin: 0 auto;
+  }
+  
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .col-md-4 {
+    width: 30%; 
+    margin-bottom: 20px; 
+  }
+  
+  h5 {
+    margin-bottom: 10px; 
+  }
+  
+  p {
+    margin-bottom: 5px; 
+  }
+  
+  hr {
+    border-color: #dee2e6; 
+  }
+
+  .copyright{
+    text-align: center;
+  }
+
+  h5{
+    color: brown;
+  }
+  .gradient_text {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(176,50,73,1) 0%, rgba(209,32,64,1) 0%, rgba(218,103,126,1) 100%, rgba(77,0,25,1) 100%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+  }
