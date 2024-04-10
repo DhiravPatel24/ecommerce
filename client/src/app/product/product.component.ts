@@ -52,7 +52,7 @@ addToCart(product: Product): void {
 async onCheckouts(productId: string): Promise<void> {
   try {
     
-    const productResponse: any = await this.http.get<any>(`https://ecommerce-store-smoky-zeta.vercel.app/products/${productId}`).toPromise();
+    const productResponse: any = await this.http.get<any>(`https://ecommerce-gold-three.vercel.app/products/${productId}`).toPromise();
   
     const currentUserString = localStorage.getItem('currentUser');
     if (currentUserString !== null) {
