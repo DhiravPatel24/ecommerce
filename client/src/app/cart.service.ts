@@ -9,7 +9,7 @@ export class CartService {
   private cartCountSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   cartCount$ = this.cartCountSubject.asObservable();
   private totalCount: number = 0; 
-  private cartItems: Product[] = []; 
+  public cartItems: Product[] = []; 
   constructor() { }
 
   updateCartCount(count: number): void {

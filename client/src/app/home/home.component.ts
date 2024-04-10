@@ -36,7 +36,13 @@ export class HomeComponent implements OnInit{
   }
   addToCart(product: Product): void {
     
-    this.cartService.updateCartCount(1);
+    const existingItemIndex = this.cartService.cartItems.findIndex(item => item.name === product.name);    
+    if (existingItemIndex === -1) {
+        // Product doesn't exist in the cart, so update the cart count
+        this.cartService.updateCartCount(1);
+    }
+    
+    // this.cartService.updateCartCount(1);
 
    
     this.cartService.addToCart(product);
