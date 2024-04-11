@@ -41,8 +41,10 @@ export class ProductComponent implements OnInit{
 }
 addToCart(product: Product): void {
     
- 
-  this.cartService.updateCartCount(1);
+  const existingItemIndex = this.cartService.cartItems.findIndex(item => item.name === product.name);    
+    if (existingItemIndex === -1) {
+        this.cartService.updateCartCount(1);
+    }
 
   
   this.cartService.addToCart(product);

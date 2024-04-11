@@ -19,14 +19,21 @@ export class CartService {
   }
 
   addToCart(product: Product): void {
+    const cart = localStorage.getItem('cartItems');
+    if (cart) {
+      this.cartItems = JSON.parse(cart) as Product[]; 
+      console.log(this.cartItems)
+    }
     const existingItemIndex = this.cartItems.findIndex(item => item.name === product.name);
     if (existingItemIndex !== -1) {
       
       this.cartItems[existingItemIndex].quantity++;
+      localStorage.setItem('cartItems',JSON.stringify(this.cartItems))
     } else {
       
       product.quantity = 1;
       this.cartItems.push(product);
+      localStorage.setItem('cartItems',JSON.stringify(this.cartItems))
       alert('Item added into Cart')
       
     }
@@ -39,6 +46,7 @@ export class CartService {
   }
 
   getCartItems(): Product[] {
+
    return this.cartItems
    
   }
@@ -52,12 +60,22 @@ export class CartService {
   }
 
   incrementQuantity(index: number): void {
+    const cart = localStorage.getItem('cartItems');
+    if (cart) {
+      this.cartItems = JSON.parse(cart) as Product[]; 
+      console.log(this.cartItems)
+    }
     if (index >= 0 && index < this.cartItems.length) {
       this.cartItems[index].quantity++; 
     }
   }
 
   decrementQuantity(index: number): void {
+    const cart = localStorage.getItem('cartItems');
+    if (cart) {
+      this.cartItems = JSON.parse(cart) as Product[]; 
+      console.log(this.cartItems)
+    }
     if (index >= 0 && index < this.cartItems.length) {
       if (this.cartItems[index].quantity > 1) {
         this.cartItems[index].quantity--; 

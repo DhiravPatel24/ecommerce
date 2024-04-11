@@ -57,7 +57,7 @@ export class HeaderComponent implements OnInit {
     // this.userStateService.currentUser.subscribe(user => {
     //   this.currentUser = user;
     // });
-    console.log(this.currentUser)
+    // console.log(this.currentUser)
   }
   
   scrollToProductContainer(): void {
@@ -68,6 +68,7 @@ export class HeaderComponent implements OnInit {
   
   onLogOut():void{
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('cartItems');
     this.userStateService.logout()
     this.router.navigate(['/user'])
     
